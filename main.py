@@ -25,8 +25,10 @@ def handle_text(message):
     if message.text == 'Записатися/відмінити':
         pass
     elif message.text == 'Послуги та ціни':
-        price = 'Price1 = 200uah \n' \
-                'price2 = 150uah'
+        price = '<b>Name</b> \n'\
+                'Price1 = 200uah \n' \
+                'Price2 = 150uah \n ' \
+                'Price3 = 200uah'
         bot.send_message(message.from_user.id, text=price, parse_mode='html')
     elif message.text == 'Адреса та контакти':
         bot.send_message(message.from_user.id, text='Ландшафтний парк, 1. Вхід з двору.', parse_mode='html')
