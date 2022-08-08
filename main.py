@@ -2,13 +2,18 @@ import telebot
 from telebot import types
 import random
 import os
+import sqlite3
+import configparser
 
 
-TOKEN = '5540905952:AAHGS_pSaI6mmP-rNvfmQ464MH4bGu1ygcg'
 INSTA_LINK = 'https://www.instagram.com/p/Caku6ftocfI/?igshid=YmMyMTA2M2Y='
 FILE_DIRECTORY = '/home/irina/PycharmProjects/TeleBotforBeauty'
 
-bot = telebot.TeleBot(TOKEN)
+config = configparser.ConfigParser()
+config.read('settings.ini')
+bot_token = config['Telebot']['token']
+
+bot = telebot.TeleBot(bot_token)
 
 
 @bot.message_handler(commands=['start'])
